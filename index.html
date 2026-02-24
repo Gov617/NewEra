@@ -1,43 +1,175 @@
-Connect this app to an existing Base44 backend.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Era Strategies | Democratic Political Consulting</title>
+<meta name="description" content="Democratic campaign strategy, field operations, and data infrastructure consulting. Built for candidates ready to win.">
 
-POST https://groundhaloapp.base44.app/functions/submitLocationPing
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-Headers:
-Content-Type: application/json
-Authorization: Bearer <accessToken from Persisted App State>
-
-Body:
-{
- "lat": double,
- "lng": double,
- "ping_type": string,
- "captured_at": ISO8601 string,
- "accuracy_meters": double
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #0b1e3d 0%, #111827 100%);
+    color: #ffffff;
 }
 
-Do NOT create new auth or backend.
+section {
+    padding: 90px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-Enable location permission (When In Use).
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
 
-Create Persisted App State:
-- accessToken (String)
-- trackingOn (Bool)
-- lastPingAt (DateTime)
-- lastPingResult (String)
+.hero {
+    text-align: center;
+    padding: 140px 20px 80px 20px;
+}
 
-Clock In:
-- Get location
-- Call API with ping_type "start_shift"
-- Set trackingOn true
-- Update lastPingAt + lastPingResult
+.hero img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 10px 24px rgba(0,0,0,.35));
+}
 
-Clock Out:
-- Get location
-- Call API with ping_type "end_shift"
-- Set trackingOn false
-- Update lastPingResult
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
 
-Add "Ping Now" button:
-- Get location
-- Call API with ping_type "manual"
-- Update lastPingResult
+.hero p {
+    font-size: 20px;
+    color: #c7c7c7;
+    max-width: 700px;
+    margin: auto;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 30px;
+    background: #c61f2b;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.card {
+    background: #121826;
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.tech-strip {
+    text-align: center;
+    font-size: 14px;
+    color: #c7c7c7;
+    letter-spacing: 1px;
+    padding-top: 40px;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media(max-width:768px){
+    .services{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <img src="assets/logo.png" alt="New Era Strategies Logo">
+    <h1>Democratic Campaign Strategy Built for the Next Era.</h1>
+    <p>
+        Field discipline. Data precision. Operational leadership.
+        We help Democratic candidates and progressive organizations build campaigns designed to win.
+    </p>
+    <a href="mailto:Marcus@newerastrategies.org" class="button">Book a Strategy Call</a>
+</section>
+
+<section class="tech-strip">
+    FIELD OPERATIONS • VOTE BUILDER (VAN) • NATIONBUILDER • SALESFORCE • HUBSPOT • CAMPAIGN INFRASTRUCTURE
+</section>
+
+<section>
+    <h2>What We Do</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Campaign Strategy</h3>
+            <p>District analysis, pathway-to-victory planning, messaging architecture, and structured weekly execution rhythms.</p>
+        </div>
+
+        <div class="card">
+            <h3>Field & GOTV Operations</h3>
+            <p>Turf cutting, voter universes, volunteer systems, accountability structures, and Election Day turnout programs built to scale.</p>
+        </div>
+
+        <div class="card">
+            <h3>Data & Infrastructure</h3>
+            <p>VoteBuilder targeting, NationBuilder implementation, and CRM systems built in Salesforce and HubSpot. Clean pipelines, dashboards, and measurable reporting.</p>
+        </div>
+
+        <div class="card">
+            <h3>Comms & Coalition</h3>
+            <p>Candidate positioning, narrative clarity, stakeholder mapping, coalition engagement, and disciplined rapid-response planning.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>About</h2>
+    <p>
+        New Era Strategies was founded by Marcus Johnson, a Democratic campaign strategist with over a decade of experience in political operations, voter engagement, and organizational leadership. Marcus has managed field programs, built scalable campaign infrastructure, and developed high-performing teams across municipal and statewide efforts.
+    </p>
+    <p>
+        Combining grassroots discipline with modern systems expertise in VoteBuilder (VAN), NationBuilder, Salesforce, and HubSpot, New Era Strategies builds campaigns that are structured, measurable, and built to win.
+    </p>
+</section>
+
+<section style="text-align:center;">
+    <h2>Let’s Build a Winning Campaign.</h2>
+    <p style="color:#c7c7c7;">Serious candidates require serious infrastructure.</p>
+    <a href="mailto:Marcus@newerastrategies.org" class="button">Start the Conversation</a>
+</section>
+
+<div class="footer">
+    © 2026 New Era Strategies. All Rights Reserved.<br>
+    New Era Strategies is a consulting firm. Not authorized by any candidate or candidate’s committee.
+</div>
+
+</body>
+</html>
