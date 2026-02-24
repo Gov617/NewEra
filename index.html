@@ -9,12 +9,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+  :root{
+    --bgTop:#061325;
+    --bgBottom:#0a1730;
+    --card:#0f1a30;
+    --muted:#cbd5e1;
+    --muted2:#94a3b8;
+    --red:#c61f2b;
+  }
+
   body{
     margin:0;
     font-family:'Inter',sans-serif;
-    background: radial-gradient(1200px 600px at 50% 15%, rgba(255,255,255,.06), transparent 55%),
-                linear-gradient(180deg,#071425 0%, #0b1730 100%);
     color:#fff;
+    background:
+      radial-gradient(1200px 700px at 50% 18%, rgba(255,255,255,.05), transparent 60%),
+      linear-gradient(180deg, var(--bgTop) 0%, var(--bgBottom) 100%);
   }
 
   section{
@@ -27,41 +37,57 @@
 
   .hero{
     text-align:center;
-    padding: 120px 20px 90px 20px;
+    padding: 110px 20px 90px 20px;
+    position: relative;
   }
 
-  /* Glass plaque to fix logo contrast */
-  .logo-plaque{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding: 26px 34px;
-    border-radius: 18px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.10);
-    box-shadow: 0 18px 55px rgba(0,0,0,.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    margin-bottom: 40px;
+  /* Soft spotlight behind logo (NO BOX) */
+  .logo-wrap{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 42px;
+  }
+  .logo-wrap::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-48%);
+    width: 620px;
+    height: 320px;
+    background: radial-gradient(closest-side, rgba(255,255,255,.10), rgba(255,255,255,.04), transparent 70%);
+    filter: blur(10px);
+    opacity: .9;
+    z-index: 0;
+    pointer-events:none;
   }
 
   .hero-logo{
-    width: 480px;        /* prominent but not ridiculous */
-    max-width: 90vw;
-    height:auto;
+    position: relative;
+    z-index: 1;
+    width: 520px;          /* prominent */
+    max-width: 92vw;
+    height: auto;
     display:block;
+
+    /* Make the logo read on dark background */
+    filter:
+      brightness(1.12)
+      contrast(1.10)
+      saturate(1.05)
+      drop-shadow(0 18px 40px rgba(0,0,0,.45));
   }
 
   .hero h1{
     font-size: 48px;
     margin: 0 0 22px 0;
-    line-height: 1.2;
+    line-height: 1.18;
   }
 
   .hero p{
     font-size: 20px;
-    color:#cbd5e1;
-    max-width: 760px;
+    color: var(--muted);
+    max-width: 780px;
     margin: 0 auto;
     line-height: 1.65;
   }
@@ -70,20 +96,23 @@
     display:inline-block;
     margin-top: 40px;
     padding: 16px 34px;
-    background:#c61f2b;
+    background: var(--red);
     color:#fff;
     text-decoration:none;
     font-weight:600;
-    border-radius: 8px;
+    border-radius: 10px;
     transition:.2s ease;
-    box-shadow: 0 14px 34px rgba(198,31,43,.25);
+    box-shadow: 0 16px 36px rgba(198,31,43,.22);
   }
-  .button:hover{ transform: translateY(-1px); opacity:.95; }
+  .button:hover{
+    transform: translateY(-1px);
+    opacity:.95;
+  }
 
   .tech-strip{
     text-align:center;
     font-size: 13px;
-    color:#94a3b8;
+    color: var(--muted2);
     letter-spacing: 1.5px;
     padding: 0 20px 60px 20px;
     max-width: 1050px;
@@ -97,15 +126,14 @@
   }
 
   .card{
-    background:#0f1a30;
+    background: var(--card);
     border: 1px solid rgba(255,255,255,.06);
     padding: 34px;
-    border-radius: 12px;
-    box-shadow: 0 18px 55px rgba(0,0,0,.25);
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.22);
   }
-
   .card h3{ margin: 0 0 10px 0; font-weight:600; }
-  .card p{ margin:0; color:#cbd5e1; line-height: 1.6; }
+  .card p{ margin:0; color: var(--muted); line-height: 1.6; }
 
   .footer{
     text-align:center;
@@ -119,10 +147,14 @@
 
   @media (max-width: 768px){
     .services{ grid-template-columns:1fr; }
-    .hero{ padding-top: 90px; }
+    .hero{ padding-top: 85px; }
     .hero h1{ font-size: 34px; }
-    .logo-plaque{ padding: 18px 18px; border-radius: 16px; }
-    .hero-logo{ width: 360px; }
+    .hero-logo{ width: 380px; }
+    .logo-wrap::before{
+      width: 460px;
+      height: 260px;
+      opacity: .75;
+    }
   }
 </style>
 </head>
@@ -130,7 +162,7 @@
 <body>
 
 <section class="hero">
-  <div class="logo-plaque">
+  <div class="logo-wrap">
     <img src="./logo1.png" alt="New Era Strategies Logo" class="hero-logo">
   </div>
 
@@ -185,7 +217,7 @@
 
 <section style="text-align:center;">
   <h2>Let’s Build a Winning Campaign.</h2>
-  <p style="color:#cbd5e1;">Serious candidates require serious infrastructure.</p>
+  <p style="color: var(--muted);">Serious candidates require serious infrastructure.</p>
   <a href="mailto:Marcus@newerastrategies.org" class="button">Start the Conversation</a>
 </section>
 
