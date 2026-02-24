@@ -1,0 +1,43 @@
+Connect this app to an existing Base44 backend.
+
+POST https://groundhaloapp.base44.app/functions/submitLocationPing
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer <accessToken from Persisted App State>
+
+Body:
+{
+ "lat": double,
+ "lng": double,
+ "ping_type": string,
+ "captured_at": ISO8601 string,
+ "accuracy_meters": double
+}
+
+Do NOT create new auth or backend.
+
+Enable location permission (When In Use).
+
+Create Persisted App State:
+- accessToken (String)
+- trackingOn (Bool)
+- lastPingAt (DateTime)
+- lastPingResult (String)
+
+Clock In:
+- Get location
+- Call API with ping_type "start_shift"
+- Set trackingOn true
+- Update lastPingAt + lastPingResult
+
+Clock Out:
+- Get location
+- Call API with ping_type "end_shift"
+- Set trackingOn false
+- Update lastPingResult
+
+Add "Ping Now" button:
+- Get location
+- Call API with ping_type "manual"
+- Update lastPingResult
