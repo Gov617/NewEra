@@ -1,193 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>New Era Strategies | Democratic Political Consulting</title>
 <meta name="description" content="Democratic campaign strategy, field operations, and data infrastructure consulting. Built for candidates ready to win.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #081729 0%, #0e1b2f 100%);
-    color: #ffffff;
-}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background: radial-gradient(1200px 600px at 50% 15%, rgba(255,255,255,.06), transparent 55%),
+                linear-gradient(180deg,#071425 0%, #0b1730 100%);
+    color:#fff;
+  }
 
-section {
+  section{
     padding: 100px 20px;
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
-}
+  }
 
-h1, h2 {
-    font-family: 'Playfair Display', serif;
-}
+  h1,h2{ font-family:'Playfair Display',serif; }
 
-.hero {
-    text-align: center;
-    padding: 160px 20px 120px 20px;
-}
+  .hero{
+    text-align:center;
+    padding: 120px 20px 90px 20px;
+  }
 
-.hero-logo {
-    width: 520px;
-    max-width: 90%;
-    height: auto;
-    margin-bottom: 50px;
-}
+  /* Glass plaque to fix logo contrast */
+  .logo-plaque{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 26px 34px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+  }
 
-.hero h1 {
+  .hero-logo{
+    width: 480px;        /* prominent but not ridiculous */
+    max-width: 90vw;
+    height:auto;
+    display:block;
+  }
+
+  .hero h1{
     font-size: 48px;
-    margin-bottom: 25px;
+    margin: 0 0 22px 0;
     line-height: 1.2;
-}
+  }
 
-.hero p {
+  .hero p{
     font-size: 20px;
-    color: #cbd5e1;
-    max-width: 720px;
-    margin: auto;
-    line-height: 1.6;
-}
+    color:#cbd5e1;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
 
-.button {
-    display: inline-block;
-    margin-top: 45px;
+  .button{
+    display:inline-block;
+    margin-top: 40px;
     padding: 16px 34px;
-    background: #c61f2b;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: 0.3s ease;
-}
+    background:#c61f2b;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    border-radius: 8px;
+    transition:.2s ease;
+    box-shadow: 0 14px 34px rgba(198,31,43,.25);
+  }
+  .button:hover{ transform: translateY(-1px); opacity:.95; }
 
-.button:hover {
-    opacity: 0.9;
-}
-
-.tech-strip {
-    text-align: center;
-    font-size: 14px;
-    color: #94a3b8;
+  .tech-strip{
+    text-align:center;
+    font-size: 13px;
+    color:#94a3b8;
     letter-spacing: 1.5px;
-    padding-top: 0;
-    padding-bottom: 60px;
-}
+    padding: 0 20px 60px 20px;
+    max-width: 1050px;
+    margin: auto;
+  }
 
-.services {
-    display: grid;
+  .services{
+    display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-}
+  }
 
-.card {
-    background: #111827;
-    padding: 35px;
-    border-radius: 8px;
-}
+  .card{
+    background:#0f1a30;
+    border: 1px solid rgba(255,255,255,.06);
+    padding: 34px;
+    border-radius: 12px;
+    box-shadow: 0 18px 55px rgba(0,0,0,.25);
+  }
 
-.card h3 {
-    margin-top: 0;
-    font-weight: 600;
-}
+  .card h3{ margin: 0 0 10px 0; font-weight:600; }
+  .card p{ margin:0; color:#cbd5e1; line-height: 1.6; }
 
-.card p {
-    color: #cbd5e1;
-    line-height: 1.6;
-}
-
-.footer {
-    text-align: center;
+  .footer{
+    text-align:center;
     padding: 60px 20px;
     font-size: 14px;
-    color: #64748b;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
+    color:#64748b;
+    border-top: 1px solid rgba(255,255,255,.08);
+    max-width: 1050px;
+    margin: auto;
+  }
 
-@media(max-width:768px){
-    .services{
-        grid-template-columns:1fr;
-    }
-    .hero h1{
-        font-size:34px;
-    }
-    .hero-logo{
-        width: 360px;
-    }
-}
+  @media (max-width: 768px){
+    .services{ grid-template-columns:1fr; }
+    .hero{ padding-top: 90px; }
+    .hero h1{ font-size: 34px; }
+    .logo-plaque{ padding: 18px 18px; border-radius: 16px; }
+    .hero-logo{ width: 360px; }
+  }
 </style>
 </head>
 
 <body>
 
 <section class="hero">
+  <div class="logo-plaque">
     <img src="./logo1.png" alt="New Era Strategies Logo" class="hero-logo">
+  </div>
 
-    <h1>Democratic Campaign Strategy Built for the Next Era.</h1>
+  <h1>Democratic Campaign Strategy Built for the Next Era.</h1>
 
-    <p>
-        Field discipline. Data precision. Operational leadership.
-        We help Democratic candidates and progressive organizations build campaigns designed to win.
-    </p>
+  <p>
+    Field discipline. Data precision. Operational leadership.
+    We help Democratic candidates and progressive organizations build campaigns designed to win.
+  </p>
 
-    <a href="mailto:Marcus@newerastrategies.org" class="button">
-        Book a Strategy Call
-    </a>
+  <a href="mailto:Marcus@newerastrategies.org" class="button">Book a Strategy Call</a>
 </section>
 
-<section class="tech-strip">
-    FIELD OPERATIONS • VOTE BUILDER (VAN) • NATIONBUILDER • SALESFORCE • HUBSPOT • CAMPAIGN INFRASTRUCTURE
-</section>
+<div class="tech-strip">
+  FIELD OPERATIONS • VOTE BUILDER (VAN) • NATIONBUILDER • SALESFORCE • HUBSPOT • CAMPAIGN INFRASTRUCTURE
+</div>
 
 <section>
-    <h2>What We Do</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Campaign Strategy</h3>
-            <p>District analysis, pathway-to-victory planning, messaging architecture, and disciplined weekly execution rhythms.</p>
-        </div>
-
-        <div class="card">
-            <h3>Field & GOTV Operations</h3>
-            <p>Turf cutting, voter universes, volunteer systems, accountability structures, and Election Day turnout programs built to scale.</p>
-        </div>
-
-        <div class="card">
-            <h3>Data & Infrastructure</h3>
-            <p>VoteBuilder targeting, NationBuilder implementation, and CRM systems built in Salesforce and HubSpot. Clean pipelines, dashboards, and measurable reporting.</p>
-        </div>
-
-        <div class="card">
-            <h3>Comms & Coalition</h3>
-            <p>Candidate positioning, narrative clarity, stakeholder mapping, coalition engagement, and disciplined rapid-response planning.</p>
-        </div>
+  <h2>What We Do</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Campaign Strategy</h3>
+      <p>District analysis, pathway-to-victory planning, messaging architecture, and disciplined weekly execution rhythms.</p>
     </div>
+
+    <div class="card">
+      <h3>Field & GOTV Operations</h3>
+      <p>Turf cutting, voter universes, volunteer systems, accountability structures, and Election Day turnout programs built to scale.</p>
+    </div>
+
+    <div class="card">
+      <h3>Data & Infrastructure</h3>
+      <p>VoteBuilder targeting, NationBuilder implementation, and CRM systems built in Salesforce and HubSpot. Clean pipelines, dashboards, and measurable reporting.</p>
+    </div>
+
+    <div class="card">
+      <h3>Comms & Coalition</h3>
+      <p>Candidate positioning, narrative clarity, stakeholder mapping, coalition engagement, and disciplined rapid-response planning.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-    <h2>About</h2>
-    <p>
-        New Era Strategies was founded by Marcus Johnson, a Democratic campaign strategist with over a decade of experience in political operations, voter engagement, and organizational leadership.
-    </p>
-    <p>
-        Combining grassroots discipline with modern systems expertise in VoteBuilder (VAN), NationBuilder, Salesforce, and HubSpot, New Era Strategies builds campaigns that are structured, measurable, and built to win.
-    </p>
+  <h2>About</h2>
+  <p>
+    New Era Strategies was founded by Marcus Johnson, a Democratic campaign strategist with over a decade of experience in political operations, voter engagement, and organizational leadership.
+  </p>
+  <p>
+    Combining grassroots discipline with modern systems expertise in VoteBuilder (VAN), NationBuilder, Salesforce, and HubSpot, New Era Strategies builds campaigns that are structured, measurable, and built to win.
+  </p>
 </section>
 
 <section style="text-align:center;">
-    <h2>Let’s Build a Winning Campaign.</h2>
-    <p style="color:#cbd5e1;">Serious candidates require serious infrastructure.</p>
-    <a href="mailto:Marcus@newerastrategies.org" class="button">
-        Start the Conversation
-    </a>
+  <h2>Let’s Build a Winning Campaign.</h2>
+  <p style="color:#cbd5e1;">Serious candidates require serious infrastructure.</p>
+  <a href="mailto:Marcus@newerastrategies.org" class="button">Start the Conversation</a>
 </section>
 
 <div class="footer">
-    © 2026 New Era Strategies. All Rights Reserved.<br>
-    New Era Strategies is a consulting firm. Not authorized by any candidate or candidate’s committee.
+  © 2026 New Era Strategies. All Rights Reserved.<br>
+  New Era Strategies is a consulting firm. Not authorized by any candidate or candidate’s committee.
 </div>
 
 </body>
